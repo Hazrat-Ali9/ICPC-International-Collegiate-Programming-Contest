@@ -1,29 +1,42 @@
 # 47th ICPC World Final 2023
 
-## Problem I : WaterWorld
-<img align="center" src="./assets/images/A.png"/>
-<img align="center" src="./assets/images/B.png"/>
+## Problem A : Riddle of the Sphinx
+<img align="center" src="./assets/images/G.png"/>
+<img align="center" src="./assets/images/H.png"/>
 
-## Solution
+### Solution
 
 ```cpp
-#include <iomanip>
 #include <iostream>
 using namespace std;
 
-int main() {
-  int n, m;
-  while (cin >> n >> m) {
-    int a, tot = 0;
-    for (int i = 0; i < n*m; i++) {
-      cin >> a;
-      tot += a;
-    }
-    cout << fixed << setprecision(9) << (long double)(tot) / (n*m) << endl;
-  }
-  return 0;
+int main()
+{
+  int a, b, c, d, e;
+  cout << "1 0 0" << endl;
+  cin >> a;
+  cout << "0 1 0" << endl;
+  cin >> b;
+  cout << "0 0 1" << endl;
+  cin >> c;
+  cout << "1 1 1" << endl;
+  cin >> d;
+  cout << "1 2 3" << endl;
+  cin >> e;
+  if (a + b + c == d)
+    cout << a << ' ' << b << ' ' << c << endl;
+  else if (a + 2 * b + 3 * c == e)
+    cout << a << ' ' << b << ' ' << c << endl;
+  else if ((d - b - c) + 2 * b + 3 * c == e)
+    cout << d - b - c << ' ' << b << ' ' << c << endl;
+  else if (a + 2 * (d - c - a) + 3 * c == e)
+    cout << a << ' ' << d - c - a << ' ' << c << endl;
+  else
+    cout << a << ' ' << b << ' ' << d - a - b << endl;
 }
+
 ```
+
 ## Problem B : Schedule
 <img align="center" src="./assets/images/C.png"/>
 <img align="center" src="./assets/images/D.png"/>
